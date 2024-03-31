@@ -1,0 +1,76 @@
+.tab {
+  cursor: pointer;
+  color: black;
+  font-size: large;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s; /* Animación de subrayado */
+}
+
+.tab:hover::before,
+.tab.active::before {
+  width: 100%;
+}
+
+.dropdown {
+  position: absolute;
+  background-color: white;
+  min-width: 20vw;
+  width: auto;
+  min-height: 15vh;
+  border-radius: 10px;
+  overflow: hidden; /* Ocultar elementos fuera de la caja */
+  opacity: 0; /* Inicialmente transparente */
+  transform: translateY(-10px); /* Desplazar hacia arriba */
+  transition: opacity 0.3s, transform 0.3s; /* Animación de opacidad y transformación */
+}
+
+.relative:hover .dropdown,
+.dropdown:hover {
+  opacity: 1; /* Hacer visible */
+  transform: translateY(0); /* Sin desplazamiento */
+}
+
+.dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  animation: fadeIn 0.5s ease forwards; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown ul li:hover {
+  background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+}
+
+
+  
+  
