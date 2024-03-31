@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Tabs from './Tabs/Tabs.js';
 import { FaShoppingCart } from "react-icons/fa";
+import Link from 'next/link.js';
 
 const NavBar = () =>{
 
@@ -13,11 +14,11 @@ return(
             height={50}
         />
         <Tabs/>
-
-        <a href='/cart' className='cursor-pointer hover:animate-shake'>
-            <FaShoppingCart 
-            className='text-2xl text-black'/>
-        </a>
+        <Link href="/cart">
+            <div className='cursor-pointer hover:animate-shake'>
+                <FaShoppingCart className='text-2xl text-black'/>
+            </div>
+        </Link>
     </div>
 )
 }

@@ -64,7 +64,7 @@ function Cart() {
                     <FaShoppingCart className='text-xl'/>
                 </div>
             {productos.map((product, index)=>(
-                <CartCard product={product} index={index}/>
+                <CartCard product={product} key={index}/>
             ))}
             </div>
           </div>
